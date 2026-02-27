@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-26T19:28:54.576270" rpa="false" schemaversion="5">
+<suite id="s1" name="Cnwave Cb1 Matrix" source="C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\cnwave\cnwave_cb1_matrix.robot">
+<kw name="Combined Suite Setup" type="SETUP">
+<kw name="Record Suite Start Time">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-02-26T19:28:54.951418" level="INFO">${start} = 1772114334</msg>
+<var>${start}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.950963" elapsed="0.000508"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-02-26T19:28:54.952160" level="INFO">${SUITE_START_TIME} = 1772114334</msg>
+<arg>${SUITE_START_TIME}</arg>
+<arg>${start}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.951672" elapsed="0.000564"/>
+</kw>
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-02-26T19:28:54.952697" level="INFO">${human} = 2026-02-26 19:28:54</msg>
+<var>${human}</var>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.952395" elapsed="0.000332"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========== SUITE STARTED ==========</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.952873" elapsed="0.000581"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Start Time: ${human}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.953634" elapsed="0.000599"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-26T19:28:54.954793" level="WARN">Suite Start Time: 2026-02-26 19:28:54</msg>
+<arg>Suite Start Time: ${human}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.954410" elapsed="0.000660"/>
+</kw>
+<status status="PASS" start="2026-02-26T19:28:54.950120" elapsed="0.005049"/>
+</kw>
+<kw name="Full Pre-Setup">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>===== Starting Full Environment Setup =====</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.955650" elapsed="0.000503"/>
+</kw>
+<kw name="Lock Bridge Ports For PTP" owner="iperf_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>===== Locking Bridge Ports For ${PTP_SETUP} =====</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.956694" elapsed="0.000495"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.957663" level="INFO">${setup} = {'pop_side': {'router': 'PoP_Router', 'device': 'V5000POP', 'port': 'ether7'}, 'cn_side': {'router': 'CNDN_Router', 'device': 'V3000CN', 'port': 'ether7'}}</msg>
+<var>${setup}</var>
+<arg>${ptp_setups}</arg>
+<arg>${PTP_SETUP}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.957374" elapsed="0.000321"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.958030" level="INFO">${pop_side} = {'router': 'PoP_Router', 'device': 'V5000POP', 'port': 'ether7'}</msg>
+<var>${pop_side}</var>
+<arg>${setup}</arg>
+<arg>pop_side</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.957829" elapsed="0.000228"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.958339" level="INFO">${cn_side} = {'router': 'CNDN_Router', 'device': 'V3000CN', 'port': 'ether7'}</msg>
+<var>${cn_side}</var>
+<arg>${setup}</arg>
+<arg>cn_side</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.958168" elapsed="0.000197"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.958630" level="INFO">${pop_router} = PoP_Router</msg>
+<var>${pop_router}</var>
+<arg>${pop_side}</arg>
+<arg>router</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.958473" elapsed="0.000182"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.958957" level="INFO">${cn_router} = CNDN_Router</msg>
+<var>${cn_router}</var>
+<arg>${cn_side}</arg>
+<arg>router</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.958767" elapsed="0.000218"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.959264" level="INFO">${pop_radio_port} = ether7</msg>
+<var>${pop_radio_port}</var>
+<arg>${pop_side}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.959100" elapsed="0.000189"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.959554" level="INFO">${cn_radio_port} = ether7</msg>
+<var>${cn_radio_port}</var>
+<arg>${cn_side}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.959395" elapsed="0.000184"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.959840" level="INFO">${pop_pc} = {'router': 'PoP_Router', 'port': '(COMBO-2)'}</msg>
+<var>${pop_pc}</var>
+<arg>${traffic_pc}</arg>
+<arg>pop_side</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.959682" elapsed="0.000183"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.960129" level="INFO">${cn_pc} = {'router': 'CNDN_Router', 'port': '(COMBO4)'}</msg>
+<var>${cn_pc}</var>
+<arg>${traffic_pc}</arg>
+<arg>cn_side</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.959970" elapsed="0.000184"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.960407" level="INFO">${pop_pc_port} = (COMBO-2)</msg>
+<var>${pop_pc_port}</var>
+<arg>${pop_pc}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.960253" elapsed="0.000179"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.960687" level="INFO">${cn_pc_port} = (COMBO4)</msg>
+<var>${cn_pc_port}</var>
+<arg>${cn_pc}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.960536" elapsed="0.000176"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>---- Configuring ${pop_router} ----</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.960814" elapsed="0.000423"/>
+</kw>
+<kw name="Connect To Device" owner="connection_keywords">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${devices}</arg>
+<arg>${device_type}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.961778" elapsed="0.000185"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.962276" level="INFO">${device_group} = {'PoP_Router': {'host': '10.110.186.201', 'username': 'admin', 'password': 'cambium123', 'port': 22, 'protocol': 'ssh'}, 'CNDN_Router': {'host': '10.110.186.211', 'username': 'admin', 'password': 'cam...</msg>
+<var>${device_group}</var>
+<arg>${devices}</arg>
+<arg>${device_type}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.962080" elapsed="0.000225"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${device_group}</arg>
+<arg>${device_name}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.962450" elapsed="0.000163"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.962907" level="INFO">${device} = {'host': '10.110.186.201', 'username': 'admin', 'password': 'cambium123', 'port': 22, 'protocol': 'ssh'}</msg>
+<var>${device}</var>
+<arg>${device_group}</arg>
+<arg>${device_name}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.962718" elapsed="0.000231"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.963223" level="INFO">${host} = 10.110.186.201</msg>
+<var>${host}</var>
+<arg>${device}</arg>
+<arg>host</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.963060" elapsed="0.000188"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.963500" level="INFO">${username} = admin</msg>
+<var>${username}</var>
+<arg>${device}</arg>
+<arg>username</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.963349" elapsed="0.000176"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.963781" level="INFO">${password} = cambium123</msg>
+<var>${password}</var>
+<arg>${device}</arg>
+<arg>password</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.963633" elapsed="0.000172"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.964061" level="INFO">${port} = 22</msg>
+<var>${port}</var>
+<arg>${device}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.963909" elapsed="0.000176"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:28:54.964340" level="INFO">${protocol} = ssh</msg>
+<var>${protocol}</var>
+<arg>${device}</arg>
+<arg>protocol</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.964187" elapsed="0.000185"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-26T19:28:54.964776" level="INFO">Connecting to mikrotik -&gt; PoP_Router (10.110.186.201)</msg>
+<arg>Connecting to ${device_type} -&gt; ${device_name} (${host})</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.964475" elapsed="0.000345"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Connect Via SSH" owner="connection_keywords">
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${host}</arg>
+<arg>port=${port}</arg>
+<arg>timeout=30s</arg>
+<arg>alias=${alias}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.966015" elapsed="0.000455"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2026-02-26T19:28:54.966793" level="INFO">Logging into '10.110.186.201:22' as 'admin'.</msg>
+<msg time="2026-02-26T19:28:57.955180" level="INFO">Read output: [9999B[9999BZ  [6n</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.966603" elapsed="2.988869"/>
+</kw>
+<arg>${host}</arg>
+<arg>${port}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${device_name}</arg>
+<status status="PASS" start="2026-02-26T19:28:54.965631" elapsed="2.990063"/>
+</kw>
+<arg>'${protocol}' == 'ssh'</arg>
+<arg>Connect Via SSH</arg>
+<arg>${host}</arg>
+<arg>${port}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${device_name}</arg>
+<arg>ELSE IF</arg>
+<arg>'${protocol}' == 'telnet'</arg>
+<arg>Connect Via Telnet</arg>
+<arg>${host}</arg>
+<arg>${port}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${device_name}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Unsupported protocol: ${protocol}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-26T19:28:54.964952" elapsed="2.990912"/>
+</kw>
+<arg>mikrotik</arg>
+<arg>${pop_router}</arg>
+<status status="PASS" start="2026-02-26T19:28:54.961496" elapsed="2.994593"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:28:57.956435" level="INFO">Executing command '/interface bridge port disable [find]'.</msg>
+<msg time="2026-02-26T19:28:58.361430" level="INFO">Command exited with return code 0.</msg>
+<arg>/interface bridge port disable [find]</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:28:57.956290" elapsed="0.405294"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:28:58.362064" level="INFO">Executing command '/interface bridge port enable [find where interface="ether7"]'.</msg>
+<msg time="2026-02-26T19:28:58.782768" level="INFO">Command exited with return code 0.</msg>
+<arg>/interface bridge port enable [find where interface="${pop_radio_port}"]</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:28:58.361814" elapsed="0.421112"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:28:58.783430" level="INFO">Executing command '/interface bridge port enable [find where interface="(COMBO-2)"]'.</msg>
+<msg time="2026-02-26T19:28:59.183715" level="INFO">Command exited with return code 0.</msg>
+<arg>/interface bridge port enable [find where interface="${pop_pc_port}"]</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:28:58.783148" elapsed="0.400813"/>
+</kw>
+<kw name="Verify Bridge Port Running" owner="iperf_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:28:59.185469" level="INFO">Executing command '/interface bridge port print where interface="ether7"'.</msg>
+<msg time="2026-02-26T19:28:59.642728" level="INFO">Command exited with return code 0.</msg>
+<msg time="2026-02-26T19:28:59.642929" level="INFO">${output} = Flags: H - HW-OFFLOAD
+Columns: INTERFACE, BRIDGE, HW, HORIZON, TRUSTED, FAST-LEAVE, PATH-COST, INTERNAL-PATH-COST, BPDU-GUARD, EDGE, POINT-TO-POINT, PVID, FRAME-TYPES
+#   INTERF  BRIDGE   HW   HORI ...</msg>
+<var>${output}</var>
+<arg>/interface bridge port print where interface="${port}"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:28:59.185122" elapsed="0.457848"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>${port}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:28:59.643172" elapsed="0.000651"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>X</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:28:59.643983" elapsed="0.000352"/>
+</kw>
+<arg>${pop_radio_port}</arg>
+<status status="PASS" start="2026-02-26T19:28:59.184475" elapsed="0.459951"/>
+</kw>
+<kw name="Verify Bridge Port Running" owner="iperf_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:28:59.645078" level="INFO">Executing command '/interface bridge port print where interface="(COMBO-2)"'.</msg>
+<msg time="2026-02-26T19:29:00.061532" level="INFO">Command exited with return code 0.</msg>
+<msg time="2026-02-26T19:29:00.061772" level="INFO">${output} = Flags: H - HW-OFFLOAD
+Columns: INTERFACE, BRIDGE, HW, HORIZON, TRUSTED, FAST-LEAVE, PATH-COST, INTERNAL-PATH-COST, BPDU-GUARD, EDGE, POINT-TO-POINT, PVID, FRAME-TYPES
+#   INTERFACE  BRIDGE   HW   HO...</msg>
+<var>${output}</var>
+<arg>/interface bridge port print where interface="${port}"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:28:59.644886" elapsed="0.416922"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>${port}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.062024" elapsed="0.000525"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>X</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.062693" elapsed="0.000299"/>
+</kw>
+<arg>${pop_pc_port}</arg>
+<status status="PASS" start="2026-02-26T19:28:59.644608" elapsed="0.418458"/>
+</kw>
+<kw name="Disconnect Device" owner="connection_keywords">
+<kw name="Switch Connection" owner="SSHLibrary">
+<arg>${device_name}</arg>
+<doc>Switches the active connection by index or alias.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.063539" elapsed="0.000146"/>
+</kw>
+<kw name="Close Connection" owner="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.063794" elapsed="0.000922"/>
+</kw>
+<arg>${pop_router}</arg>
+<status status="PASS" start="2026-02-26T19:29:00.063263" elapsed="0.001552"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>---- Configuring ${cn_router} ----</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.064962" elapsed="0.000651"/>
+</kw>
+<kw name="Connect To Device" owner="connection_keywords">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${devices}</arg>
+<arg>${device_type}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.066201" elapsed="0.000232"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.066781" level="INFO">${device_group} = {'PoP_Router': {'host': '10.110.186.201', 'username': 'admin', 'password': 'cambium123', 'port': 22, 'protocol': 'ssh'}, 'CNDN_Router': {'host': '10.110.186.211', 'username': 'admin', 'password': 'cam...</msg>
+<var>${device_group}</var>
+<arg>${devices}</arg>
+<arg>${device_type}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.066562" elapsed="0.000251"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${device_group}</arg>
+<arg>${device_name}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.066924" elapsed="0.000160"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.067397" level="INFO">${device} = {'host': '10.110.186.211', 'username': 'admin', 'password': 'cambium123', 'port': 22, 'protocol': 'ssh'}</msg>
+<var>${device}</var>
+<arg>${device_group}</arg>
+<arg>${device_name}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.067191" elapsed="0.000234"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.067687" level="INFO">${host} = 10.110.186.211</msg>
+<var>${host}</var>
+<arg>${device}</arg>
+<arg>host</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.067531" elapsed="0.000180"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.067965" level="INFO">${username} = admin</msg>
+<var>${username}</var>
+<arg>${device}</arg>
+<arg>username</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.067813" elapsed="0.000177"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.068248" level="INFO">${password} = cambium123</msg>
+<var>${password}</var>
+<arg>${device}</arg>
+<arg>password</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.068093" elapsed="0.000181"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.068541" level="INFO">${port} = 22</msg>
+<var>${port}</var>
+<arg>${device}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.068379" elapsed="0.000186"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:00.068836" level="INFO">${protocol} = ssh</msg>
+<var>${protocol}</var>
+<arg>${device}</arg>
+<arg>protocol</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.068670" elapsed="0.000190"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-26T19:29:00.069347" level="INFO">Connecting to mikrotik -&gt; CNDN_Router (10.110.186.211)</msg>
+<arg>Connecting to ${device_type} -&gt; ${device_name} (${host})</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.068974" elapsed="0.000440"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Connect Via SSH" owner="connection_keywords">
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${host}</arg>
+<arg>port=${port}</arg>
+<arg>timeout=30s</arg>
+<arg>alias=${alias}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.071157" elapsed="0.000461"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2026-02-26T19:29:00.071978" level="INFO">Logging into '10.110.186.211:22' as 'admin'.</msg>
+<msg time="2026-02-26T19:29:02.753791" level="INFO">Read output: [9999B[9999BZ  [6n</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.071762" elapsed="2.682273"/>
+</kw>
+<arg>${host}</arg>
+<arg>${port}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${device_name}</arg>
+<status status="PASS" start="2026-02-26T19:29:00.070555" elapsed="2.683685"/>
+</kw>
+<arg>'${protocol}' == 'ssh'</arg>
+<arg>Connect Via SSH</arg>
+<arg>${host}</arg>
+<arg>${port}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${device_name}</arg>
+<arg>ELSE IF</arg>
+<arg>'${protocol}' == 'telnet'</arg>
+<arg>Connect Via Telnet</arg>
+<arg>${host}</arg>
+<arg>${port}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${device_name}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Unsupported protocol: ${protocol}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-26T19:29:00.069609" elapsed="2.684758"/>
+</kw>
+<arg>mikrotik</arg>
+<arg>${cn_router}</arg>
+<status status="PASS" start="2026-02-26T19:29:00.065878" elapsed="2.688694"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:29:02.755190" level="INFO">Executing command '/interface bridge port disable [find]'.</msg>
+<msg time="2026-02-26T19:29:03.136395" level="INFO">Command exited with return code 0.</msg>
+<arg>/interface bridge port disable [find]</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:29:02.754901" elapsed="0.381644"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:29:03.137109" level="INFO">Executing command '/interface bridge port enable [find where interface="ether7"]'.</msg>
+<msg time="2026-02-26T19:29:03.606892" level="INFO">Command exited with return code 0.</msg>
+<arg>/interface bridge port enable [find where interface="${cn_radio_port}"]</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:29:03.136836" elapsed="0.470330"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:29:03.607971" level="INFO">Executing command '/interface bridge port enable [find where interface="(COMBO4)"]'.</msg>
+<msg time="2026-02-26T19:29:04.014355" level="INFO">Command exited with return code 0.</msg>
+<arg>/interface bridge port enable [find where interface="${cn_pc_port}"]</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:29:03.607522" elapsed="0.406963"/>
+</kw>
+<kw name="Verify Bridge Port Running" owner="iperf_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:29:04.015267" level="INFO">Executing command '/interface bridge port print where interface="ether7"'.</msg>
+<msg time="2026-02-26T19:29:04.423924" level="INFO">Command exited with return code 0.</msg>
+<msg time="2026-02-26T19:29:04.424300" level="INFO">${output} = Flags: H - HW-OFFLOAD
+Columns: INTERFACE, BRIDGE, HW, HORIZON, TRUSTED, FAST-LEAVE, PATH-COST, INTERNAL-PATH-COST, BPDU-GUARD, EDGE, POINT-TO-POINT, PVID, FRAME-TYPES
+#   INTERF  BRIDGE   HW   HORI ...</msg>
+<var>${output}</var>
+<arg>/interface bridge port print where interface="${port}"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.015090" elapsed="0.409279"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>${port}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.424736" elapsed="0.000894"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>X</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.425900" elapsed="0.000609"/>
+</kw>
+<arg>${cn_radio_port}</arg>
+<status status="PASS" start="2026-02-26T19:29:04.014753" elapsed="0.411903"/>
+</kw>
+<kw name="Verify Bridge Port Running" owner="iperf_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-02-26T19:29:04.427594" level="INFO">Executing command '/interface bridge port print where interface="(COMBO4)"'.</msg>
+<msg time="2026-02-26T19:29:04.793095" level="INFO">Command exited with return code 0.</msg>
+<msg time="2026-02-26T19:29:04.793466" level="INFO">${output} = Flags: H - HW-OFFLOAD
+Columns: INTERFACE, BRIDGE, HW, HORIZON, TRUSTED, FAST-LEAVE, PATH-COST, INTERNAL-PATH-COST, BPDU-GUARD, EDGE, POINT-TO-POINT, PVID, FRAME-TYPES
+#   INTERFACE  BRIDGE   HW   HO...</msg>
+<var>${output}</var>
+<arg>/interface bridge port print where interface="${port}"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.427360" elapsed="0.366176"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>${port}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.793911" elapsed="0.000879"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>X</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.795055" elapsed="0.000511"/>
+</kw>
+<arg>${cn_pc_port}</arg>
+<status status="PASS" start="2026-02-26T19:29:04.426998" elapsed="0.368691"/>
+</kw>
+<kw name="Disconnect Device" owner="connection_keywords">
+<kw name="Switch Connection" owner="SSHLibrary">
+<arg>${device_name}</arg>
+<doc>Switches the active connection by index or alias.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.796407" elapsed="0.000272"/>
+</kw>
+<kw name="Close Connection" owner="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.796868" elapsed="0.000681"/>
+</kw>
+<arg>${cn_router}</arg>
+<status status="PASS" start="2026-02-26T19:29:04.795968" elapsed="0.001657"/>
+</kw>
+<status status="PASS" start="2026-02-26T19:28:54.956482" elapsed="9.841197"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.798077" level="INFO">${setup} = {'pop_side': {'router': 'PoP_Router', 'device': 'V5000POP', 'port': 'ether7'}, 'cn_side': {'router': 'CNDN_Router', 'device': 'V3000CN', 'port': 'ether7'}}</msg>
+<var>${setup}</var>
+<arg>${ptp_setups}</arg>
+<arg>${PTP_SETUP}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.797809" elapsed="0.000301"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.798439" level="INFO">${pop_side} = {'router': 'PoP_Router', 'device': 'V5000POP', 'port': 'ether7'}</msg>
+<var>${pop_side}</var>
+<arg>${setup}</arg>
+<arg>pop_side</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.798238" elapsed="0.000237"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.798758" level="INFO">${pop_device} = V5000POP</msg>
+<var>${pop_device}</var>
+<arg>${pop_side}</arg>
+<arg>device</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.798584" elapsed="0.000199"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-02-26T19:29:04.799915" level="INFO">${POP_NODE_NAME} = V5000POP</msg>
+<arg>${POP_NODE_NAME}</arg>
+<arg>${pop_device}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.798908" elapsed="0.001064"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>POP Node: ${POP_NODE_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.800101" elapsed="0.000714"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.801228" level="INFO">${cn_side} = {'router': 'CNDN_Router', 'device': 'V3000CN', 'port': 'ether7'}</msg>
+<var>${cn_side}</var>
+<arg>${setup}</arg>
+<arg>cn_side</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.800980" elapsed="0.000281"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.801581" level="INFO">${cn_device} = V3000CN</msg>
+<var>${cn_device}</var>
+<arg>${cn_side}</arg>
+<arg>device</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.801390" elapsed="0.000217"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-02-26T19:29:04.802710" level="INFO">${DN_NODE_NAME} = V3000CN</msg>
+<arg>${DN_NODE_NAME}</arg>
+<arg>${cn_device}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.801733" elapsed="0.001023"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>DN Node: ${DN_NODE_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.802873" elapsed="0.000577"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-02-26T19:29:04.804318" level="INFO">${pop_model} = V5000</msg>
+<var>${pop_model}</var>
+<arg>${pop_device}</arg>
+<arg>POP</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.803626" elapsed="0.000731"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2026-02-26T19:29:04.804755" level="INFO">${pop_model_lower} = v5000</msg>
+<var>${pop_model_lower}</var>
+<arg>${pop_model}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.804556" elapsed="0.000226"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-26T19:29:04.805227" level="INFO">${controller_key} = pop_v5000</msg>
+<var>${controller_key}</var>
+<arg>pop_${pop_model_lower}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.804896" elapsed="0.000359"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Controller Key: ${controller_key}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.805364" elapsed="0.000524"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.806302" level="INFO">${controller} = {'host': '10.110.186.201', 'port': 6443, 'username': 'admin', 'password': 'admin1234'}</msg>
+<var>${controller}</var>
+<arg>${public_controllers}</arg>
+<arg>${controller_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.806048" elapsed="0.000285"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.806637" level="INFO">${HOST} = 10.110.186.201</msg>
+<var>${HOST}</var>
+<arg>${controller}</arg>
+<arg>host</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.806457" elapsed="0.000206"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.806929" level="INFO">${PORT} = 6443</msg>
+<var>${PORT}</var>
+<arg>${controller}</arg>
+<arg>port</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.806773" elapsed="0.000180"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.807209" level="INFO">${USERNAME} = admin</msg>
+<var>${USERNAME}</var>
+<arg>${controller}</arg>
+<arg>username</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.807056" elapsed="0.000183"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-26T19:29:04.807489" level="INFO">${PASSWORD} = admin1234</msg>
+<var>${PASSWORD}</var>
+<arg>${controller}</arg>
+<arg>password</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.807341" elapsed="0.000172"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Connecting to: ${HOST}:${PORT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.807632" elapsed="0.000583"/>
+</kw>
+<kw name="Connect To Controller" owner="cnwave_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-26T19:29:04.951933" level="INFO">Authenticating with CNWave controller</msg>
+<msg time="2026-02-26T19:29:05.443716" level="INFO">Authentication successful</msg>
+<msg time="2026-02-26T19:29:05.443848" level="INFO">2026-02-26 19:29:04,951 | INFO | cnwave | Authenticating with CNWave controller
+2026-02-26 19:29:05,443 | INFO | cnwave | Authentication successful</msg>
+<msg time="2026-02-26T19:29:05.444244" level="INFO">${client} = &lt;libraries.cnwave.client.CnWaveClient object at 0x000001470FC25FD0&gt;</msg>
+<var>${client}</var>
+<arg>__import__("libraries.cnwave.client").cnwave.client.CnWaveClient("${host}", "${username}", "${password}", port=${port}, verify_ssl=False)</arg>
+<arg>modules=libraries.cnwave.client</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-26T19:29:04.808938" elapsed="0.635355"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-02-26T19:29:05.445051" level="INFO">${CLIENT} = &lt;libraries.cnwave.client.CnWaveClient object at 0x000001470FC25FD0&gt;</msg>
+<arg>${CLIENT}</arg>
+<arg>${client}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-02-26T19:29:05.444536" elapsed="0.000565"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Connected to CNWave Controller at ${host}:${port}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:05.445244" elapsed="0.000516"/>
+</kw>
+<arg>${HOST}</arg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>${PORT}</arg>
+<status status="PASS" start="2026-02-26T19:29:04.808443" elapsed="0.637418"/>
+</kw>
+<kw name="Get Node Info" owner="cnwave_keywords">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-02-26T19:29:05.599691" level="WARN">Retry 1/5 after error: 400 Client Error: Bad Request for url: https://10.110.186.201:6443/api/getNodeInfo. Sleeping 2.24s</msg>
+<msg time="2026-02-26T19:29:07.995353" level="WARN">Retry 2/5 after error: 400 Client Error: Bad Request for url: https://10.110.186.201:6443/api/getNodeInfo. Sleeping 4.28s</msg>
+<msg time="2026-02-26T19:29:12.528589" level="WARN">Retry 3/5 after error: 400 Client Error: Bad Request for url: https://10.110.186.201:6443/api/getNodeInfo. Sleeping 8.55s</msg>
+<msg time="2026-02-26T19:29:13.476065" level="FAIL">Calling method 'get_node_info' failed: Execution terminated by signal</msg>
+<var>${info}</var>
+<arg>${CLIENT}</arg>
+<arg>get_node_info</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-02-26T19:29:05.446322" elapsed="8.033285">Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${info}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-26T19:29:13.479887" elapsed="0.000036"/>
+</kw>
+<return>
+<value>${info}</value>
+<status status="NOT RUN" start="2026-02-26T19:29:13.479982" elapsed="0.000034"/>
+</return>
+<var>${node_info}</var>
+<status status="FAIL" start="2026-02-26T19:29:05.446103" elapsed="8.034091">Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<var>${pop_version}</var>
+<var>${dn_version}</var>
+<arg>${CLIENT}</arg>
+<arg>get_pop_dn_versions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-26T19:29:13.480327" elapsed="0.000022"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${POP_VERSION}</arg>
+<arg>${pop_version}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-02-26T19:29:13.480481" elapsed="0.000019"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${DN_VERSION}</arg>
+<arg>${dn_version}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-02-26T19:29:13.480603" elapsed="0.000018"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>POP Software Version: ${POP_VERSION}</arg>
+<arg>stream=stdout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-26T19:29:13.480729" elapsed="0.000019"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>POP Software Version: ${DN_VERSION}</arg>
+<arg>stream=stdout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-26T19:29:13.480841" elapsed="0.000019"/>
+</kw>
+<kw name="Initialize Selected Models" owner="iperf_keywords">
+<status status="NOT RUN" start="2026-02-26T19:29:13.481197" elapsed="0.000029"/>
+</kw>
+<kw name="Initialize Run Directory" owner="iperf_keywords">
+<status status="NOT RUN" start="2026-02-26T19:29:13.481469" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2026-02-26T19:28:54.955455" elapsed="18.526135">Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2026-02-26T19:28:54.949750" elapsed="18.531940">Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</kw>
+<test id="s1-t1" name="TC01 - CB1 | TDD 50-50 | MCS 12" line="22">
+<status status="FAIL" start="2026-02-26T19:29:13.481777" elapsed="0.000633">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="TC02 - CB1 | TDD 50-50 | MCS 9" line="25">
+<status status="FAIL" start="2026-02-26T19:29:13.482986" elapsed="0.000379">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="TC03 - CB1 | TDD 50-50 | MCS 2" line="28">
+<status status="FAIL" start="2026-02-26T19:29:13.483862" elapsed="0.000358">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t4" name="TC04 - CB1 | TDD 75-25 | MCS 12" line="32">
+<status status="FAIL" start="2026-02-26T19:29:13.484814" elapsed="0.000349">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t5" name="TC05 - CB1 | TDD 75-25 | MCS 9" line="35">
+<status status="FAIL" start="2026-02-26T19:29:13.485664" elapsed="0.000325">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t6" name="TC06 - CB1 | TDD 75-25 | MCS 2" line="38">
+<status status="FAIL" start="2026-02-26T19:29:13.486808" elapsed="0.000393">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t7" name="TC07 - CB1 | TDD 30-70 | MCS 12" line="42">
+<status status="FAIL" start="2026-02-26T19:29:13.487765" elapsed="0.000400">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t8" name="TC08 - CB1 | TDD 30-70 | MCS 9" line="45">
+<status status="FAIL" start="2026-02-26T19:29:13.488671" elapsed="0.002341">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<test id="s1-t9" name="TC09 - CB1 | TDD 30-70 | MCS 2" line="48">
+<status status="FAIL" start="2026-02-26T19:29:13.491534" elapsed="0.000364">Parent suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</test>
+<kw name="Print Suite Execution Time" type="TEARDOWN">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.493422" level="INFO">${end} = 1772114353</msg>
+<var>${end}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.493032" elapsed="0.000425"/>
+</kw>
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.493876" level="INFO">${human_end} = 2026-02-26 19:29:13</msg>
+<var>${human_end}</var>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.493595" elapsed="0.000328"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.494456" level="INFO">${duration} = 19</msg>
+<var>${duration}</var>
+<arg>${end} - ${SUITE_START_TIME}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.494046" elapsed="0.000441"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.494972" level="INFO">${minutes} = 0</msg>
+<var>${minutes}</var>
+<arg>int(${duration} // 60)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.494607" elapsed="0.000398"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.495496" level="INFO">${seconds} = 19</msg>
+<var>${seconds}</var>
+<arg>int(${duration} % 60)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.495136" elapsed="0.000390"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========== SUITE COMPLETED ==========</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.495646" elapsed="0.000396"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>End Time: ${human_end}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.496171" elapsed="0.000374"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Total Execution Time: ${minutes} min ${seconds} sec</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.496670" elapsed="0.000363"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.497478" level="WARN">Suite End Time: 2026-02-26 19:29:13</msg>
+<arg>Suite End Time: ${human_end}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.497162" elapsed="0.000507"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-26T19:29:13.498174" level="WARN">Total Execution Time: 0 min 19 sec</msg>
+<arg>Total Execution Time: ${minutes} min ${seconds} sec</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-26T19:29:13.497818" elapsed="0.000526"/>
+</kw>
+<status status="PASS" start="2026-02-26T19:29:13.492781" elapsed="0.005638"/>
+</kw>
+<status status="FAIL" start="2026-02-26T19:28:54.578428" elapsed="18.920027">Suite setup failed:
+Calling method 'get_node_info' failed: Execution terminated by signal</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="9" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cnwave Cb1 Matrix" id="s1" pass="0" fail="9" skip="0">Cnwave Cb1 Matrix</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-02-26T19:28:54.954793" level="WARN">Suite Start Time: 2026-02-26 19:28:54</msg>
+<msg time="2026-02-26T19:29:05.599691" level="WARN">Retry 1/5 after error: 400 Client Error: Bad Request for url: https://10.110.186.201:6443/api/getNodeInfo. Sleeping 2.24s</msg>
+<msg time="2026-02-26T19:29:07.995353" level="WARN">Retry 2/5 after error: 400 Client Error: Bad Request for url: https://10.110.186.201:6443/api/getNodeInfo. Sleeping 4.28s</msg>
+<msg time="2026-02-26T19:29:12.528589" level="WARN">Retry 3/5 after error: 400 Client Error: Bad Request for url: https://10.110.186.201:6443/api/getNodeInfo. Sleeping 8.55s</msg>
+<msg time="2026-02-26T19:29:13.497478" level="WARN">Suite End Time: 2026-02-26 19:29:13</msg>
+<msg time="2026-02-26T19:29:13.498174" level="WARN">Total Execution Time: 0 min 19 sec</msg>
+</errors>
+</robot>

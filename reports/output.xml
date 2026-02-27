@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-19T16:04:08.476285" rpa="false" schemaversion="5">
+<suite id="s1" name="Cnwave Login Test" source="C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\cnwave\cnwave_login_test.robot">
+<test id="s1-t1" name="Login And Validate Link Health" line="11">
+<kw name="Connect To Controller" owner="CnWaveControllerLib">
+<msg time="2026-02-19T16:04:08.657554" level="INFO">Connecting to controller 10.110.186.135...</msg>
+<msg time="2026-02-19T16:04:08.657794" level="INFO">Authenticating with CNWave controller...</msg>
+<msg time="2026-02-19T16:04:08.798390" level="INFO">Authentication successful</msg>
+<msg time="2026-02-19T16:04:08.798531" level="INFO">Connected to controller 10.110.186.135</msg>
+<msg time="2026-02-19T16:04:08.798603" level="INFO">C:\Users\srt001\AppData\Local\Programs\Python\Python314\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.110.186.135'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<arg>${HOST}</arg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>${PORT}</arg>
+<status status="PASS" start="2026-02-19T16:04:08.656948" elapsed="0.142006"/>
+</kw>
+<kw name="Get Topology" owner="CnWaveControllerLib">
+<msg time="2026-02-19T16:04:08.813853" level="INFO">C:\Users\srt001\AppData\Local\Programs\Python\Python314\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.110.186.135'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-02-19T16:04:08.814262" level="INFO">${topology} = {'name': '', 'nodes': [{'name': 'PoP', 'node_type': 2, 'is_primary': True, 'mac_addr': '30:cb:c7:73:fa:f4', 'pop_node': True, 'status': 3, 'wlan_mac_addrs': ['42:cb:c7:73:fa:f4'], 'site_name': 'PoP', ...</msg>
+<var>${topology}</var>
+<status status="PASS" start="2026-02-19T16:04:08.799521" elapsed="0.014792"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-02-19T16:04:08.815354" level="INFO">Length is 5.</msg>
+<arg>${topology}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-02-19T16:04:08.814712" elapsed="0.000704"/>
+</kw>
+<kw name="Get Links" owner="CnWaveControllerLib">
+<msg time="2026-02-19T16:04:08.827924" level="INFO">C:\Users\srt001\AppData\Local\Programs\Python\Python314\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.110.186.135'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-02-19T16:04:08.828258" level="INFO">${links} = [{'name': 'link-DN-PoP', 'a_node_name': 'DN', 'z_node_name': 'PoP', 'link_type': 1, 'is_alive': True, 'linkup_attempts': 3, 'a_node_mac': '42:cb:c7:73:f4:2e', 'z_node_mac': '42:cb:c7:73:fa:f4'}]</msg>
+<var>${links}</var>
+<status status="PASS" start="2026-02-19T16:04:08.815842" elapsed="0.012462"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-02-19T16:04:08.829109" level="INFO">Length is 1.</msg>
+<arg>${links}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-02-19T16:04:08.828669" elapsed="0.000498"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-19T16:04:08.830323" level="INFO">${alive} = True</msg>
+<var>${alive}</var>
+<arg>any(link.get("is_alive") for link in ${links})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-19T16:04:08.829587" elapsed="0.000774"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-19T16:04:08.831149" level="INFO">Link Alive: True</msg>
+<arg>Link Alive: ${alive}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-19T16:04:08.830791" elapsed="0.000414"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${alive}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-02-19T16:04:08.831583" elapsed="0.000371"/>
+</kw>
+<status status="PASS" start="2026-02-19T16:04:08.655822" elapsed="0.176634"/>
+</test>
+<status status="PASS" start="2026-02-19T16:04:08.478344" elapsed="0.355902"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cnwave Login Test" id="s1" pass="1" fail="0" skip="0">Cnwave Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cnWave iperf performace Dashboard</title>
+    <meta http-equiv="refresh" content="30">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- YOUR ENTIRE CSS BLOCK REMAINS EXACTLY SAME --- */
+        /* I am not removing anything here */
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            color: #f3f4f6;
+            min-height: 100vh;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #111827, #1e1b4b);
+            animation: bgShift 15s ease infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% { background: linear-gradient(135deg,#111827,#1e1b4b); }
+            100% { background: linear-gradient(135deg,#1e1b4b,#0f172a); }
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg,#1f2937,#111827);
+            padding: 20px;
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .sidebar h2 {
+            font-size: 16px;
+            color: #8b5cf6;
+        }
+
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .top-row {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .kpi {
+            background: linear-gradient(135deg,#1f2937,#111827);
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .kpi h3 { font-size: 14px; color: #9ca3af; margin: 0; }
+        .kpi h1 { margin: 5px 0; font-size: 28px; color: #10b981; }
+
+        .filters {
+            background: #1f2937;
+            border-radius: 16px;
+            padding: 15px;
+        }
+
+        .gauge-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 12px;
+            min-height: 150px;
+        }
+
+        .gauge-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+        }
+
+        .gauge {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .gauge-bg {
+            stroke: #1f2937;
+        }
+
+        .gauge-fill {
+            stroke: #22c55e;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .gauge-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #f3f4f6;
+        }
+
+        /* Version Cards */
+        .version-card {
+            padding: 20px;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .version-card h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .export-btn { background: #10b981; }
+
+        .graph-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .card {
+            background: linear-gradient(135deg,#1f2937,#111827);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .graph-container {
+            background: #0b1220;
+            border-radius: 14px;
+            padding: 10px;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .graph-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .table-wrapper {
+            background: #1f2937;
+            border-radius: 16px;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        th { background: #111827; padding: 6px; }
+        td { padding: 5px; text-align: center; }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .status-badge.pass { color: #10b981; }
+        .status-badge.fail { color: #ef4444; }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 14px;
+            align-items: end;
+        }
+
+        .filter-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== FORM CONTROLS FIX ===== */
+
+        select,
+        input[type="date"] {
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background-color: #0f172a;
+            color: #f3f4f6;
+            font-size: 13px;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            transition: all 0.2s ease;
+        }
+
+        select:focus,
+        input[type="date"]:focus {
+            border-color: #6366f1;
+        }
+
+        button[type="submit"] {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg,#6366f1,#8b5cf6);
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        /* Fix calendar icon visibility */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+
+        .advanced-tabs {
+            background: rgba(31,41,55,0.55);
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>PERFORMANCE DASHBOARD</h2>
+        <p style="font-size:12px;color:#9ca3af;">iPerf Throughput Monitoring</p>
+    </div>
+
+    <div class="content">
+
+        <!-- SINGLE FORM START -->
+        <form method="get" action="/">
+
+            <div class="advanced-tabs">
+
+                <!-- CHANNEL -->
+                <div>
+                    <label>CHANNEL</label><br>
+                    <input type="radio" name="channel" value="CB1"
+                        {% if request.args.get('channel') == 'CB1' %}checked{% endif %}> CB1
+                    <input type="radio" name="channel" value="CB2"
+                        {% if request.args.get('channel') == 'CB2' %}checked{% endif %}> CB2
+                </div>
+
+                <!-- TDD -->
+                <div id="tdd-section">
+                    <label>TDD</label><br>
+                    {% for ratio in ['50-50','75-25','30-70'] %}
+                    <input type="radio" name="tdd" value="{{ratio}}"
+                        {% if request.args.get('tdd') == ratio %}checked{% endif %}>
+                    {{ratio}}
+                    {% endfor %}
+                </div>
+
+                <!-- MCS -->
+                <div>
+                    <label>MCS</label><br>
+                    {% for m in ['12','9','2'] %}
+                    <input type="radio" name="mcs" value="{{m}}"
+                        {% if request.args.get('mcs') == m %}checked{% endif %}>
+                    {{m}}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="top-row">
+
+                <!-- PASS RATE -->
+                <div class="kpi gauge-card">
+                    <h3>PASS RATE</h3>
+
+                    <div class="gauge-wrapper">
+                        <svg class="gauge" viewBox="0 0 120 120">
+                            <circle class="gauge-bg"
+                                    cx="60" cy="60" r="50"
+                                    stroke-width="10" fill="none"/>
+                            <circle class="gauge-fill"
+                                    cx="60" cy="60" r="50"
+                                    stroke-width="7" fill="none"
+                                    stroke-dasharray="314"
+                                    stroke-dashoffset="{{ 314 - (314 * pass_rate / 100) }}"/>
+                        </svg>
+
+                        <div class="gauge-text">
+                            {{ pass_rate }}%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POP VERSION -->
+                <div class="kpi version-card">
+                    <h3>POP VERSION</h3>
+                    <h1>{{ pop_version if pop_version else "-" }}</h1>
+                </div>
+
+                <!-- DN VERSION -->
+                <div class="kpi version-card">
+                    <h3>DN VERSION</h3>
+                    <h1>{{ dn_version if dn_version else "-" }}</h1>
+                </div>
+
+            </div>
+
+                <div class="filters">
+                    <div class="filter-grid">
+
+                        <div class="filter-item">
+                            <label>Board Model</label>
+                            <select name="board_model">
+                                <option value="">All</option>
+                                {% for model in board_models %}
+                                <option value="{{ model }}"
+                                    {% if selected_model == model %}selected{% endif %}>
+                                    {{ model }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>Run ID</label>
+                            <select name="run">
+                                <option value="">Run</option>
+                                {% for r in runs %}
+                                <option value="{{ r }}"
+                                    {% if selected_run == r %}selected{% endif %}>
+                                    {{ r }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>Test Name</label>
+                            <select name="test_name">
+                                <option value="">Test</option>
+                                {% for test in tests %}
+                                <option value="{{ test }}"
+                                    {% if selected_test == test %}selected{% endif %}>
+                                    {{ test }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>From Date</label>
+                            <input type="date" name="start"
+                                value="{{ request.args.get('start','') }}">
+                        </div>
+
+                        <div class="filter-item">
+                            <label>To Date</label>
+                            <input type="date" name="end"
+                                value="{{ request.args.get('end','') }}">
+                        </div>
+
+                        <div class="filter-item">
+                            <label>&nbsp;</label>
+                            <button type="submit">Apply</button>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <a href="/export?
+                    board_model={{ selected_model or '' }}
+                    &run={{ selected_run or '' }}
+                    &channel={{ request.args.get('channel','') }}
+                    &tdd={{ request.args.get('tdd','') }}
+                    &mcs={{ request.args.get('mcs','') }}
+                    &test_name={{ selected_test or '' }}
+                    &start={{ request.args.get('start','') }}
+                    &end={{ request.args.get('end','') }}">
+                        <button type="button" class="export-btn">Export</button>
+                    </a>
+
+            </div>
+
+        </form>
+        <!-- SINGLE FORM END -->
+
+        <!-- GRAPHS -->
+        <div class="graph-row">
+
+            <div class="card">
+                <h3>TCP STREAM COMPARISION</h3>
+                <div class="graph-container">
+                    {% if selected_test %}
+                    <img src="{{ url_for('stream_comparison_graph',
+                                        board_model=selected_model,
+                                        run=selected_run,
+                                        channel=channel,
+                                        tdd=tdd,
+                                        mcs=mcs,
+                                        test_name=selected_test) }}">
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>PER-SECOND GRAPH</h3>
+                <div class="graph-container">
+                    {% if selected_model and selected_run and selected_test %}
+                    <img src="/run_graph?board_model={{ selected_model }}&run={{ selected_run }}&channel={{ channel }}&tdd={{ tdd }}&mcs={{ mcs }}&test_name={{ selected_test }}">
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        <!-- FAILED CASES -->
+        {% if failed_cases %}
+        <div class="card">
+            <h3 style="color:#ef4444;">Failed Test Cases</h3>
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>Channel</th>
+                        <th>TDD</th>
+                        <th>MCS</th>
+                        <th>Test</th>
+                        <th>Status</th>
+                    </tr>
+                    {% for row in failed_cases %}
+                    <tr style="background:rgba(239,68,68,0.15);">
+                        <td>{{ row.channel }}</td>
+                        <td>{{ row.tdd }}</td>
+                        <td>{{ row.mcs }}</td>
+                        <td>{{ row.test_name }}</td>
+                        <td style="color:#ef4444;font-weight:bold;">
+                            {{ row.status }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- TABLE -->
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Channel</th>
+                    <th>TDD</th>
+                    <th>MCS</th>
+                    <th>Test</th>
+                    <th>Uplink</th>
+                    <th>Downlink</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.timestamp }}</td>
+                    <td>{{ row.test_name }}</td>
+                    <td>{{ row.sent_avg }}</td>
+                    <td>{{ row.recv_avg }}</td>
+                    <td>
+                        <span class="status-badge {{ row.status|lower }}">
+                            {{ row.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+</div>
+<script>
+function toggleTDD() {
+    const cb2 = document.querySelector('input[name="channel"][value="CB2"]');
+    const tddSection = document.getElementById("tdd-section");
+
+    if (cb2.checked) {
+        tddSection.style.display = "none";
+    } else {
+        tddSection.style.display = "block";
+    }
+}
+
+// Run on page load
+window.onload = toggleTDD;
+
+// Run when channel changes
+document.querySelectorAll('input[name="channel"]').forEach(radio => {
+    radio.addEventListener("change", toggleTDD);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+# -------------------------------------------------
+# Global Traffic PC Mapping (constant for all PTP)
+# -------------------------------------------------
+traffic_pc:
+  pop_side:
+    router: PoP_Router
+    port: "(COMBO-2)"
+
+  cn_side:
+    router: CNDN_Router
+    port: "(COMBO4)"
+
+
+# -------------------------------------------------
+# PTP Setup Definitions
+# -------------------------------------------------
+ptp_setups:
+
+  V1000POP_V1000CN:
+    pop_side:
+      router: PoP_Router
+      device: V1000POP
+      port: ether2
+    cn_side:
+      router: CNDN_Router
+      device: V1000CN
+      port: ether2
+
+
+  V2000POP_V2000DN:
+    pop_side:
+      router: PoP_Router
+      device: V2000POP
+      port: ether4
+    cn_side:
+      router: CNDN_Router
+      device: V2000DN
+      port: ether4
+
+
+  V5000POP_V3000CN:
+    pop_side:
+      router: PoP_Router
+      device: V5000POP
+      port: ether7
+    cn_side:
+      router: CNDN_Router
+      device: V3000CN
+      port: ether7
+
+
+  V5000POP_V1000CN:
+    pop_side:
+      router: PoP_Router
+      device: V5000POP
+      port: ether8
+    cn_side:
+      router: CNDN_Router
+      device: V1000CN
+      port: ether8
+
+
+  V2000iPOP_V2000iCN:
+    pop_side:
+      router: PoP_Router
+      device: V2000iPOP
+      port: ether3
+    cn_side:
+      router: CNDN_Router
+      device: V2000iCN
+      port: ether3
+
+
+  V5000iPOP_V5000iCN:
+    pop_side:
+      router: PoP_Router
+      device: V5000iPOP
+      port: ether6
+    cn_side:
+      router: CNDN_Router
+      device: V5000iCN
+      port: ether6
+
+
+  V3000POP_V3000CN:
+    pop_side:
+      router: PoP_Router
+      device: V3000POP
+      port: ether5
+    cn_side:
+      router: CNDN_Router
+      device: V3000CN
+      port: ether5

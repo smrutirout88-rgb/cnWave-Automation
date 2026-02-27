@@ -1,0 +1,149 @@
+devices:
+
+  mikrotik:
+    PoP_Router:
+      host: 10.110.186.201
+      username: admin
+      password: cambium123
+      port: 22
+      protocol: ssh
+
+    CNDN_Router:
+      host: 10.110.186.211
+      username: admin
+      password: cambium123
+      port: 22
+      protocol: ssh
+
+
+  cnmatrix:
+    switch1:
+      host: 10.110.186.67
+      username: admin
+      password: Admin@1234
+      port: 23
+      protocol: telnet
+
+
+  radio_pop:
+    V1000:
+      host: 169.254.1.10
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V2000:
+      host: 169.254.1.30
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V5000:
+      host: 169.254.1.50
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V2000i:
+      host: 169.254.1.80
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V5000i:
+      host: 169.254.1.40
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+
+  radio_cn_dn:
+    V1000:
+      host: 169.254.1.11
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V2000:
+      host: 169.254.1.31
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V5000:
+      host: 169.254.1.51
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V2000i:
+      host: 169.254.1.81
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+    V5000i:
+      host: 169.254.1.41
+      username: admin
+      password: admin1234
+      port: 22
+      protocol: ssh
+
+
+  ubuntu:
+    pop:
+      host: 10.110.186.7
+      test_host: 169.254.1.222
+      username: cnwave
+      password: cnwave
+      port: 22
+      protocol: ssh
+
+    dn:
+      host: 10.110.186.51
+      test_host: 169.254.1.15
+      username: cnwave
+      password: cnwave
+      port: 22
+      protocol: ssh
+
+public_controllers:
+
+  pop_v1000:
+    host: 10.110.186.201
+    port: 1443
+    username: admin
+    password: admin1234
+
+  pop_v2000:
+    host: 10.110.186.201
+    port: 3443
+    username: admin
+    password: admin1234
+
+  pop_v5000:
+    host: 10.110.186.201
+    port: 6443
+    username: admin
+    password: admin1234
+
+  pop_v2000i:
+    host: 10.110.186.135
+    port: 8443
+    username: admin
+    password: admin1234
+
+  pop_v5000i:
+    host: 10.110.186.135
+    port: 4443
+    username: admin
+    password: admin1234

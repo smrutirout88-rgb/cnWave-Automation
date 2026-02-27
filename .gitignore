@@ -1,0 +1,10 @@
+results/
+venv/
+env/
+__pycache__/
+*.pyc
+*.log
+*.csv
+.env
+dashboard_data.csv
+*.png

@@ -1,0 +1,7 @@
+robotframework==7.0
+robotframework-sshlibrary
+robotframework-requests
+robotframework-telnet
+pyyaml
+paramiko
+requests
