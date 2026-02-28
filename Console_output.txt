@@ -1,0 +1,1087 @@
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation> robot --pythonpath . -v PTP_SETUP:V5000POP_V3000CN cnwave/cnwave_cb1_matrix.robot
+==============================================================================
+Cnwave Cb1 Matrix
+==============================================================================
+
+========== SUITE STARTED ==========
+Start Time: 2026-02-28 12:38:38
+[ WARN ] Suite Start Time: 2026-02-28 12:38:38
+===== Starting Full Environment Setup =====
+===== Locking Bridge Ports For V5000POP_V3000CN =====
+---- Configuring PoP_Router ----
+---- Configuring CNDN_Router ----
+POP Node: V5000POP
+DN Node: V3000CN
+Controller Key: pop_v5000
+Connecting to: 10.110.186.201:6443
+2026-02-28 12:38:48,071 | INFO | cnwave | Authenticating with CNWave controller
+2026-02-28 12:38:48,512 | INFO | cnwave | Authentication successful
+Connected to CNWave Controller at 10.110.186.201:6443
+POP Version: 1.8-dev8
+TC01 - CB1 | TDD 50-50 | MCS 12                                       | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC02 - CB1 | TDD 50-50 | MCS 9                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC03 - CB1 | TDD 50-50 | MCS 2                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC04 - CB1 | TDD 75-25 | MCS 12                                       | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC05 - CB1 | TDD 75-25 | MCS 9                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC06 - CB1 | TDD 75-25 | MCS 2                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC07 - CB1 | TDD 30-70 | MCS 12                                       | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC08 - CB1 | TDD 30-70 | MCS 9                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC09 - CB1 | TDD 30-70 | MCS 2                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+
+========== SUITE COMPLETED ==========
+End Time: 2026-02-28 12:38:48
+Total Execution Time: 0 min 10 sec
+[ WARN ] Suite End Time: 2026-02-28 12:38:48
+[ WARN ] Total Execution Time: 0 min 10 sec
+Cnwave Cb1 Matrix                                                     | FAIL |
+Suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+
+9 tests, 0 passed, 9 failed
+==============================================================================
+Output:  C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\output.xml
+Log:     C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\log.html
+Report:  C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\report.html
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation> robot --pythonpath . -v PTP_SETUP:V5000POP_V3000CN cnwave/cnwave_cb1_matrix.robot
+==============================================================================
+Cnwave Cb1 Matrix
+==============================================================================
+
+========== SUITE STARTED ==========
+Start Time: 2026-02-28 12:40:17
+[ WARN ] Suite Start Time: 2026-02-28 12:40:17
+===== Starting Full Environment Setup =====
+===== Locking Bridge Ports For V5000POP_V3000CN =====
+---- Configuring PoP_Router ----
+---- Configuring CNDN_Router ----
+POP Node: V5000POP
+DN Node: V3000CN
+Controller Key: pop_v5000
+Connecting to: 10.110.186.201:6443
+2026-02-28 12:40:26,922 | INFO | cnwave | Authenticating with CNWave controller
+2026-02-28 12:40:27,311 | INFO | cnwave | Authentication successful
+Connected to CNWave Controller at 10.110.186.201:6443
+POP Version: 1.8-dev8
+DN Version: 1.8-dev8
+POP Software Version: 1.8-dev8
+TC01 - CB1 | TDD 50-50 | MCS 12                                       | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC02 - CB1 | TDD 50-50 | MCS 9                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC03 - CB1 | TDD 50-50 | MCS 2                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC04 - CB1 | TDD 75-25 | MCS 12                                       | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC05 - CB1 | TDD 75-25 | MCS 9                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC06 - CB1 | TDD 75-25 | MCS 2                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC07 - CB1 | TDD 30-70 | MCS 12                                       | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC08 - CB1 | TDD 30-70 | MCS 9                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+TC09 - CB1 | TDD 30-70 | MCS 2                                        | FAIL |
+Parent suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+------------------------------------------------------------------------------
+
+========== SUITE COMPLETED ==========
+End Time: 2026-02-28 12:40:27
+Total Execution Time: 0 min 10 sec
+[ WARN ] Suite End Time: 2026-02-28 12:40:27
+[ WARN ] Total Execution Time: 0 min 10 sec
+Cnwave Cb1 Matrix                                                     | FAIL |
+Suite setup failed:
+ValueError: Argument 'stream' got value '1.8-dev8' that cannot be converted to 'stdout' or 'stderr'.
+
+9 tests, 0 passed, 9 failed
+==============================================================================
+Output:  C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\output.xml
+Log:     C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\log.html
+Report:  C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\report.html
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation> robot --pythonpath . -v PTP_SETUP:V5000POP_V3000CN cnwave/cnwave_cb1_matrix.robot
+==============================================================================
+Cnwave Cb1 Matrix
+==============================================================================
+
+========== SUITE STARTED ==========
+Start Time: 2026-02-28 12:42:14
+[ WARN ] Suite Start Time: 2026-02-28 12:42:14
+===== Starting Full Environment Setup =====
+===== Locking Bridge Ports For V5000POP_V3000CN =====
+---- Configuring PoP_Router ----
+---- Configuring CNDN_Router ----
+POP Node: V5000POP
+DN Node: V3000CN
+Controller Key: pop_v5000
+Connecting to: 10.110.186.201:6443
+2026-02-28 12:42:25,879 | INFO | cnwave | Authenticating with CNWave controller
+2026-02-28 12:42:26,313 | INFO | cnwave | Authentication successful
+Connected to CNWave Controller at 10.110.186.201:6443
+POP Version: 1.8-dev8
+DN Version: 1.8-dev8
+POP Software Version: 1.8-dev8
+POP Software Version: 1.8-dev8
+Auto-detected PoP Model: V5000
+Auto-detected DN Model: V3000
+Results folder created: results/V5000POP_V3000CN/20260228_124226
+TC01 - CB1 | TDD 50-50 | MCS 12
+----- TEST STARTED -----
+TC01 - CB1 | TDD 50-50 | MCS 12 at 2026-02-28 12:42:26
+.========================================================
+Running CB1 | TDD 50-50 | MCS 12
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 0
+TDD already correct. No change required.
+Ensuring MCS is 12
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC01 - CB1 | TDD 50-50 | MCS 12                                       Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 170.77 Mbps
+Sent Avg Mbps: 170.77
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 191.73 Mbps
+Sent Avg Mbps: 191.73
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 165.74 Mbps
+Average Received Throughput: 195.05 Mbps
+Sent Avg Mbps: 165.74
+Received Avg Mbps: 195.05
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 168.95 Mbps
+Sent Avg Mbps: 168.95
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 213.33 Mbps
+Sent Avg Mbps: 213.33
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 117.89 Mbps
+Average Received Throughput: 194.83 Mbps
+Sent Avg Mbps: 117.89
+Received Avg Mbps: 194.83
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 224.28 Mbps
+Sent Avg Mbps: 224.28
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 296.05 Mbps
+Sent Avg Mbps: 296.05
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 151.86 Mbps
+Average Received Throughput: 693.89 Mbps
+Sent Avg Mbps: 151.86
+Received Avg Mbps: 693.89
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS12/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC01 - CB1 | TDD 50-50 | MCS 12 completed at 2026-02-28 12:53:38
+Test Duration: 672 seconds
+TC01 - CB1 | TDD 50-50 | MCS 12                                       | PASS |
+------------------------------------------------------------------------------
+TC02 - CB1 | TDD 50-50 | MCS 9
+----- TEST STARTED -----
+TC02 - CB1 | TDD 50-50 | MCS 9 at 2026-02-28 12:53:38
+.========================================================
+Running CB1 | TDD 50-50 | MCS 9
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 0
+TDD already correct. No change required.
+Ensuring MCS is 9
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC02 - CB1 | TDD 50-50 | MCS 9                                        Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 171.61 Mbps
+Sent Avg Mbps: 171.61
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 320.02 Mbps
+Sent Avg Mbps: 320.02
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 182.70 Mbps
+Average Received Throughput: 187.95 Mbps
+Sent Avg Mbps: 182.7
+Received Avg Mbps: 187.95
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 256.64 Mbps
+Sent Avg Mbps: 256.64
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 544.40 Mbps
+Sent Avg Mbps: 544.4
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 299.51 Mbps
+Average Received Throughput: 275.98 Mbps
+Sent Avg Mbps: 299.51
+Received Avg Mbps: 275.98
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 343.46 Mbps
+Sent Avg Mbps: 343.46
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 342.13 Mbps
+Sent Avg Mbps: 342.13
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 186.80 Mbps
+Average Received Throughput: 658.16 Mbps
+Sent Avg Mbps: 186.8
+Received Avg Mbps: 658.16
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS9/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC02 - CB1 | TDD 50-50 | MCS 9 completed at 2026-02-28 13:04:38
+Test Duration: 660 seconds
+TC02 - CB1 | TDD 50-50 | MCS 9                                        | PASS |
+------------------------------------------------------------------------------
+TC03 - CB1 | TDD 50-50 | MCS 2
+----- TEST STARTED -----
+TC03 - CB1 | TDD 50-50 | MCS 2 at 2026-02-28 13:04:38
+.========================================================
+Running CB1 | TDD 50-50 | MCS 2
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 0
+TDD already correct. No change required.
+Ensuring MCS is 2
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC03 - CB1 | TDD 50-50 | MCS 2                                        Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 150.89 Mbps
+Sent Avg Mbps: 150.89
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 160.10 Mbps
+Sent Avg Mbps: 160.1
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 144.89 Mbps
+Average Received Throughput: 131.82 Mbps
+Sent Avg Mbps: 144.89
+Received Avg Mbps: 131.82
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 148.68 Mbps
+Sent Avg Mbps: 148.68
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 159.73 Mbps
+Sent Avg Mbps: 159.73
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 152.41 Mbps
+Average Received Throughput: 139.34 Mbps
+Sent Avg Mbps: 152.41
+Received Avg Mbps: 139.34
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 137.02 Mbps
+Sent Avg Mbps: 137.02
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 155.99 Mbps
+Sent Avg Mbps: 155.99
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 153.99 Mbps
+Average Received Throughput: 148.22 Mbps
+Sent Avg Mbps: 153.99
+Received Avg Mbps: 148.22
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 50-50/MCS2/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC03 - CB1 | TDD 50-50 | MCS 2 completed at 2026-02-28 13:16:09
+Test Duration: 691 seconds
+TC03 - CB1 | TDD 50-50 | MCS 2                                        | PASS |
+------------------------------------------------------------------------------
+TC04 - CB1 | TDD 75-25 | MCS 12
+----- TEST STARTED -----
+TC04 - CB1 | TDD 75-25 | MCS 12 at 2026-02-28 13:16:09
+.========================================================
+Running CB1 | TDD 75-25 | MCS 12
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 0
+Changing TDD to 3
+Waiting for link stabilization...
+Link is stable after TDD change
+Ensuring MCS is 12
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC04 - CB1 | TDD 75-25 | MCS 12                                       Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 495.52 Mbps
+Sent Avg Mbps: 495.52
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 363.96 Mbps
+Sent Avg Mbps: 363.96
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 394.74 Mbps
+Average Received Throughput: 278.81 Mbps
+Sent Avg Mbps: 394.74
+Received Avg Mbps: 278.81
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 467.29 Mbps
+Sent Avg Mbps: 467.29
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 369.19 Mbps
+Sent Avg Mbps: 369.19
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 346.95 Mbps
+Average Received Throughput: 176.63 Mbps
+Sent Avg Mbps: 346.95
+Received Avg Mbps: 176.63
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 695.02 Mbps
+Sent Avg Mbps: 695.02
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 422.44 Mbps
+Sent Avg Mbps: 422.44
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 625.57 Mbps
+Average Received Throughput: 355.34 Mbps
+Sent Avg Mbps: 625.57
+Received Avg Mbps: 355.34
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS12/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC04 - CB1 | TDD 75-25 | MCS 12 completed at 2026-02-28 13:29:05
+Test Duration: 776 seconds
+TC04 - CB1 | TDD 75-25 | MCS 12                                       | PASS |
+------------------------------------------------------------------------------
+TC05 - CB1 | TDD 75-25 | MCS 9
+----- TEST STARTED -----
+TC05 - CB1 | TDD 75-25 | MCS 9 at 2026-02-28 13:29:05
+.========================================================
+Running CB1 | TDD 75-25 | MCS 9
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 3
+TDD already correct. No change required.
+Ensuring MCS is 9
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC05 - CB1 | TDD 75-25 | MCS 9                                        Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 817.75 Mbps
+Sent Avg Mbps: 817.75
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 221.16 Mbps
+Sent Avg Mbps: 221.16
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 590.94 Mbps
+Average Received Throughput: 214.37 Mbps
+Sent Avg Mbps: 590.94
+Received Avg Mbps: 214.37
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 817.27 Mbps
+Sent Avg Mbps: 817.27
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 225.36 Mbps
+Sent Avg Mbps: 225.36
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 239.91 Mbps
+Average Received Throughput: 220.36 Mbps
+Sent Avg Mbps: 239.91
+Received Avg Mbps: 220.36
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 879.78 Mbps
+Sent Avg Mbps: 879.78
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 226.83 Mbps
+Sent Avg Mbps: 226.83
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 785.96 Mbps
+Average Received Throughput: 211.35 Mbps
+Sent Avg Mbps: 785.96
+Received Avg Mbps: 211.35
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS9/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC05 - CB1 | TDD 75-25 | MCS 9 completed at 2026-02-28 13:40:09
+Test Duration: 664 seconds
+TC05 - CB1 | TDD 75-25 | MCS 9                                        | PASS |
+------------------------------------------------------------------------------
+TC06 - CB1 | TDD 75-25 | MCS 2
+----- TEST STARTED -----
+TC06 - CB1 | TDD 75-25 | MCS 2 at 2026-02-28 13:40:09
+.========================================================
+Running CB1 | TDD 75-25 | MCS 2
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 3
+TDD already correct. No change required.
+Ensuring MCS is 2
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC06 - CB1 | TDD 75-25 | MCS 2                                        Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 245.19 Mbps
+Sent Avg Mbps: 245.19
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS2/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 58.88 Mbps
+Sent Avg Mbps: 58.88
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 75-25/MCS2/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 149.82 Mbps
+Average Received Throughput: 56.65 Mbps
+Sent Avg Mbps: 149.82
+Received Avg Mbps: 56.65
+FTC06 - CB1 | TDD 75-25 | MCS 2 completed at 2026-02-28 13:43:52
+Test Duration: 223 seconds
+TC06 - CB1 | TDD 75-25 | MCS 2                                        | FAIL |
+Received throughput 56.65 Mbps is below expected 100 Mbps
+------------------------------------------------------------------------------
+TC07 - CB1 | TDD 30-70 | MCS 12
+----- TEST STARTED -----
+TC07 - CB1 | TDD 30-70 | MCS 12 at 2026-02-28 13:43:52
+.========================================================
+Running CB1 | TDD 30-70 | MCS 12
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 3
+Changing TDD to 5
+Waiting for link stabilization...
+Link is stable after TDD change
+Ensuring MCS is 12
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC07 - CB1 | TDD 30-70 | MCS 12                                       Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 971.57 Mbps
+Sent Avg Mbps: 971.57
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 2090.81 Mbps
+Sent Avg Mbps: 2090.81
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 897.73 Mbps
+Average Received Throughput: 1463.58 Mbps
+Sent Avg Mbps: 897.73
+Received Avg Mbps: 1463.58
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 971.60 Mbps
+Sent Avg Mbps: 971.6
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 2101.48 Mbps
+Sent Avg Mbps: 2101.48
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 844.30 Mbps
+Average Received Throughput: 1175.33 Mbps
+Sent Avg Mbps: 844.3
+Received Avg Mbps: 1175.33
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 1022.94 Mbps
+Sent Avg Mbps: 1022.94
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 1999.66 Mbps
+Sent Avg Mbps: 1999.66
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 957.49 Mbps
+Average Received Throughput: 1860.02 Mbps
+Sent Avg Mbps: 957.49
+Received Avg Mbps: 1860.02
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS12/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC07 - CB1 | TDD 30-70 | MCS 12 completed at 2026-02-28 13:56:52
+Test Duration: 780 seconds
+TC07 - CB1 | TDD 30-70 | MCS 12                                       | PASS |
+------------------------------------------------------------------------------
+TC08 - CB1 | TDD 30-70 | MCS 9
+----- TEST STARTED -----
+TC08 - CB1 | TDD 30-70 | MCS 9 at 2026-02-28 13:56:52
+.========================================================
+Running CB1 | TDD 30-70 | MCS 9
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 5
+TDD already correct. No change required.
+Ensuring MCS is 9
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC08 - CB1 | TDD 30-70 | MCS 9                                        Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 518.64 Mbps
+Sent Avg Mbps: 518.64
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 1405.84 Mbps
+Sent Avg Mbps: 1405.84
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 488.00 Mbps
+Average Received Throughput: 1036.93 Mbps
+Sent Avg Mbps: 488.0
+Received Avg Mbps: 1036.93
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 517.79 Mbps
+Sent Avg Mbps: 517.79
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 1403.04 Mbps
+Sent Avg Mbps: 1403.04
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 508.32 Mbps
+Average Received Throughput: 368.50 Mbps
+Sent Avg Mbps: 508.32
+Received Avg Mbps: 368.5
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 534.87 Mbps
+Sent Avg Mbps: 534.87
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 1467.84 Mbps
+Sent Avg Mbps: 1467.84
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 516.71 Mbps
+Average Received Throughput: 1179.11 Mbps
+Sent Avg Mbps: 516.71
+Received Avg Mbps: 1179.11
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS9/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC08 - CB1 | TDD 30-70 | MCS 9 completed at 2026-02-28 14:07:44
+Test Duration: 652 seconds
+TC08 - CB1 | TDD 30-70 | MCS 9                                        | PASS |
+------------------------------------------------------------------------------
+TC09 - CB1 | TDD 30-70 | MCS 2
+----- TEST STARTED -----
+TC09 - CB1 | TDD 30-70 | MCS 2 at 2026-02-28 14:07:44
+.========================================================
+Running CB1 | TDD 30-70 | MCS 2
+========================================================
+Waiting for initial link...
+Initial link is active
+Current TDD: 5
+TDD already correct. No change required.
+Ensuring MCS is 2
+Waiting for link recovery after MCS change
+[ WARN ] Keyword 'BuiltIn.Run Keyword Unless' is deprecated.
+TC09 - CB1 | TDD 30-70 | MCS 2                                        Link stable after MCS check
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-4Stream.txt
+Average Throughput: 155.80 Mbps
+Sent Avg Mbps: 155.8
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/TCP-Downlink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 4 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-4Stream.txt
+Average Throughput: 431.28 Mbps
+Sent Avg Mbps: 431.28
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/TCP-Uplink-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 4 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-4Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-4Stream.txt
+Average Sent Throughput: 144.54 Mbps
+Average Received Throughput: 279.72 Mbps
+Sent Avg Mbps: 144.54
+Received Avg Mbps: 279.72
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/TCP-Bidirectional-4Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Downlink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Downlink-1Stream.txt
+Average Throughput: 155.20 Mbps
+Sent Avg Mbps: 155.2
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/TCP-Downlink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -t 60 -P 1 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Uplink-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Uplink-1Stream.txt
+Average Throughput: 429.67 Mbps
+Sent Avg Mbps: 429.67
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/TCP-Uplink-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -t 60 -P 1 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/TCP-Bidirectional-1Stream.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_TCP-Bidirectional-1Stream.txt
+Average Sent Throughput: 149.45 Mbps
+Average Received Throughput: 135.45 Mbps
+Sent Avg Mbps: 149.45
+Received Avg Mbps: 135.45
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/TCP-Bidirectional-1Stream_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Downlink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Downlink.txt
+Average Throughput: 161.85 Mbps
+Sent Avg Mbps: 161.85
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/UDP-Downlink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on pop
+Executing on dn: iperf3 -c 169.254.1.222 -i1 -u -b 2G -t 60 -J
+Stopping iperf server on pop
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Uplink.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Uplink.txt
+Average Throughput: 432.68 Mbps
+Sent Avg Mbps: 432.68
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/UDP-Uplink_graph.png
+Dashboard updated: dashboard_data.csv
+Starting iperf server on dn
+Executing on pop: iperf3 -c 169.254.1.15 -u -i1 -b 2G -t 60 --bidir -J
+Stopping iperf server on dn
+Saved JSON: results/V5000POP_V3000CN/20260228_124226/UDP-Bidirectional.json
+Saved RAW: results/V5000POP_V3000CN/20260228_124226/raw_UDP-Bidirectional.txt
+Average Sent Throughput: 111.51 Mbps
+Average Received Throughput: 1139.98 Mbps
+Sent Avg Mbps: 111.51
+Received Avg Mbps: 1139.98
+Graph saved: results/V5000POP_V3000CN/20260228_124226/CB1/TDD 30-70/MCS2/UDP-Bidirectional_graph.png
+Dashboard updated: dashboard_data.csv
+.TC09 - CB1 | TDD 30-70 | MCS 2 completed at 2026-02-28 14:18:56
+Test Duration: 672 seconds
+TC09 - CB1 | TDD 30-70 | MCS 2                                        | PASS |
+------------------------------------------------------------------------------
+
+========== SUITE COMPLETED ==========
+End Time: 2026-02-28 14:18:56
+Total Execution Time: 96 min 42 sec
+[ WARN ] Suite End Time: 2026-02-28 14:18:56
+[ WARN ] Total Execution Time: 96 min 42 sec
+Cnwave Cb1 Matrix                                                     | FAIL |
+9 tests, 8 passed, 1 failed
+==============================================================================
+Output:  C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\output.xml
+Log:     C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\log.html
+Report:  C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation\report.html
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>
+PS C:\Users\srt001\OneDrive - Cambium Networks Limited\Desktop\cnWave\cnWave_60Ghz_automation>

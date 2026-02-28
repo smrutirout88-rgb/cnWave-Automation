@@ -131,7 +131,7 @@ def home():
     # -----------------------------
     # Normalize structured columns
     # -----------------------------
-    normalize_cols = ["run_id", "board_model", "channel", "tdd", "mcs", "test_name"]
+    normalize_cols = ["run_id", "board_model", "channel", "tdd", "mcs", "test_name", "pop_version", "dn_version"]
     for col in normalize_cols:
         if col in df.columns:
             df[col] = df[col].astype(str).str.strip()
@@ -543,14 +543,20 @@ def export_excel():
         ]
     })
 
-    export_df = df.copy()
-    export_df.rename(columns={
-        "timestamp": "Timestamp",
-        "test_name": "Test Name",
-        "sent_avg": "Uplink (Mbps)",
-        "recv_avg": "Downlink (Mbps)",
-        "status": "Status"
-    }, inplace=True)
+    export_df = df.rename(columns={
+            "timestamp":   "Timestamp",
+            "board_model": "Board Model",
+            "run_id":      "Run ID",
+            "channel":     "Channel",
+            "tdd":         "TDD",
+            "mcs":         "MCS",
+            "test_name":   "Test Name",
+            "sent_avg":    "Uplink (Mbps)",
+            "recv_avg":    "Downlink (Mbps)",
+            "status":      "Status",
+            "pop_version": "POP Version",
+            "dn_version":  "DN Version"
+        })
 
     with pd.ExcelWriter(output, engine="openpyxl") as writer:
         metadata.to_excel(writer, sheet_name="Test Details", index=False)

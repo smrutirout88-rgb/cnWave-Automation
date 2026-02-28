@@ -28,45 +28,74 @@ def plot_iperf(json_file, output_image):
     times_sent = []
     times_recv = []
 
-    for i, interval in enumerate(intervals):
-        current_time = i + 1
-        times.append(current_time)
-
-        if "streams" in interval:
-            tx_total = 0
-            rx_total = 0
-
-            for stream in interval["streams"]:
-                bps = stream["bits_per_second"] / 1_000_000
-
-                if stream.get("sender", False):
-                    tx_total += bps
+    ### Process intervals safely with checks for expected keys and structures
+    
+    if is_udp:
+        # UDP logic stays the same
+        if "end" in data:
+            end_data = data["end"]
+            if "streams" in end_data and len(end_data["streams"]) >= 1:
+                sender_stream = end_data["streams"][0]["udp"]
+                sent_bps = sender_stream["bits_per_second"]
+                sent_loss = sender_stream.get("lost_percent", 0)
+                avg_sent = (sent_bps * (1 - sent_loss / 100)) / 1_000_000
+                if len(end_data["streams"]) > 1:
+                    recv_stream = end_data["streams"][1]["udp"]
+                    recv_bps = recv_stream["bits_per_second"]
+                    recv_loss = recv_stream.get("lost_percent", 0)
+                    avg_recv = (recv_bps * (1 - recv_loss / 100)) / 1_000_000
+                    bidirectional = True
                 else:
-                    rx_total += bps
+                    bidirectional = False
+            else:
+                avg_sent = sum(sent_bw) / len(sent_bw)
+        else:
+            avg_sent = sum(sent_bw) / len(sent_bw)
+    else:
+        # TCP — use end.streams to get accurate totals
+        # Avoid duplicate key problem by reading streams directly
+        end_streams = data.get("end", {}).get("streams", [])
 
-            # Sender data
-            if tx_total > 0:
-                sent_bw.append(tx_total)
-                times_sent.append(current_time)
+        sender_total = 0
+        receiver_total = 0
+        sender_count = 0
+        receiver_count = 0
 
-            # Receiver data
-            if rx_total > 0:
-                recv_bw.append(rx_total)
-                times_recv.append(current_time)
+        for s in end_streams:
+            sender_info   = s.get("sender", {})
+            receiver_info = s.get("receiver", {})
 
-            # Backward compatibility (single direction cases)
-            if tx_total == 0 and rx_total > 0:
-                sent_bw.append(rx_total)
-                times_sent.append(current_time)
+            # Check if this stream is a sending stream or receiving stream
+            # sender block has retransmits, receiver block doesn't
+            if sender_info.get("sender", True) == True and "retransmits" in sender_info:
+                sender_total += sender_info["bits_per_second"] / 1_000_000
+                sender_count += 1
+            elif sender_info.get("sender", True) == False:
+                receiver_total += sender_info["bits_per_second"] / 1_000_000
+                receiver_count += 1
 
-        elif "sum" in interval:
-            value = interval["sum"]["bits_per_second"] / 1_000_000
-            sent_bw.append(value)
-            times_sent.append(current_time)
+        if sender_count > 0:
+            avg_sent = sender_total
+        else:
+            avg_sent = sum(sent_bw) / len(sent_bw) if sent_bw else 0
 
-    if not sent_bw:
-        print("No throughput data found")
-        return
+        if receiver_count > 0:
+            avg_recv = receiver_total
+            bidirectional = True
+        else:
+            bidirectional = len(recv_bw) > 0
+            if bidirectional:
+                avg_recv = sum(recv_bw) / len(recv_bw)
+
+    ## end of "streams" processing"
+    #     elif "sum" in interval:
+    #         value = interval["sum"]["bits_per_second"] / 1_000_000
+    #         sent_bw.append(value)
+    #         times_sent.append(current_time)
+
+    # if not sent_bw:
+    #     print("No throughput data found")
+    #     return
 
     # -----------------------------
     # Correct Average Calculation

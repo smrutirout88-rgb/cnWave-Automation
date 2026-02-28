@@ -103,18 +103,10 @@ Full Pre-Setup
 
     Connect To Controller    ${HOST}    ${USERNAME}    ${PASSWORD}    ${PORT}
 
-    ${node_info}=    Get Node Info
-
     # --------------------------------------------------
     # Fetch software versions once per suite
     # --------------------------------------------------
-    ${pop_version}    ${dn_version}=    
-    ...    Call Method    
-    ...    ${CLIENT}    
-    ...    get_pop_dn_versions    
-
-    Set Suite Variable    ${POP_VERSION}    ${pop_version}
-    Set Suite Variable    ${DN_VERSION}     ${dn_version}
+    Get POP And DN Versions
 
     Log To Console    POP Software Version: ${POP_VERSION}    stream=stdout
     Log To Console    POP Software Version: ${DN_VERSION}    stream=stdout

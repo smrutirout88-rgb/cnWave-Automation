@@ -254,17 +254,17 @@ Log Raw Results
     [Arguments]    
     ...    ${test_name}    
     ...    ${result}    
-    ...    ${cb}    
+    ...    ${channel}    
     ...    ${tdd}    
     ...    ${mcs}    
     ...    ${pop_version}=${POP_VERSION}    
     ...    ${dn_version}=${DN_VERSION}
 
     ${json_file}=    Set Variable    ${RESULT_DIR}/${test_name}.json
-    Create File    ${json_file}    ${iperf_output}
+    Create File    ${json_file}    ${result}
 
     ${raw_file}=    Set Variable    ${RESULT_DIR}/raw_${test_name}.txt
-    Create File    ${raw_file}    ${iperf_output}
+    Create File    ${raw_file}    ${result}
 
     Log To Console    Saved JSON: ${json_file}
     Log To Console    Saved RAW: ${raw_file}
@@ -397,14 +397,14 @@ Log Raw Results
     # ===========================
 
     ${row}=    Set Variable
-    ...    ${timestamp},${PTP_SETUP},${run_id},${channel},${tdd},${mcs},${test_name},${sent_value},${recv_value},${status}\n
+    ...    ${timestamp},${PTP_SETUP},${run_id},${channel},${tdd},${mcs},${test_name},${sent_value},${recv_value},${status},${pop_version},${dn_version}\n
 
     ${file_exists}=    Run Keyword And Return Status    OperatingSystem.File Should Exist    ${csv_file}
-
+    
     IF    not ${file_exists}
         Create File
         ...    ${csv_file}
-        ...    timestamp,board_model,run_id,channel,tdd,mcs,test_name,sent_avg,recv_avg,status\n
+        ...    timestamp,board_model,run_id,channel,tdd,mcs,test_name,sent_avg,recv_avg,status,pop_version,dn_version\n
     END
 
     Append To File    ${csv_file}    ${row}

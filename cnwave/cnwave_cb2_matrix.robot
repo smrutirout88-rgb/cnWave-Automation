@@ -4,22 +4,30 @@ Resource    ../resources/iperf_keywords.robot
 Variables   ../inventory.yaml
 Variables   ../mikrotik/ptp_setups.yaml
 
-Suite Setup    Full Pre-Setup
+Suite Setup       Combined Suite Setup
+Suite Teardown    Print Suite Execution Time
+Test Setup        Record Test Start Time
+Test Teardown     Print Test Execution Time
+
 
 *** Variables ***
 ${CB_NAME}     CB2
+
+${SUITE_START_TIME}    ${None}
+${TEST_START_TIME}     ${None}
 
 
 *** Test Cases ***
 
 TC01 - CB2 | TDD 50-50 | MCS 12
-    Run CB2 Scenario    0    50-50    12    9
+    Run CB1 Scenario    0    50-50    12
 
 TC02 - CB2 | TDD 50-50 | MCS 9
-    Run CB2 Scenario    0    50-50    9     9
+    Run CB1 Scenario    0    50-50    9
 
 TC03 - CB2 | TDD 50-50 | MCS 2
-    Run CB2 Scenario    0    50-50    2     9
+    Run CB1 Scenario    0    50-50    2
+
 
 
 *** Keywords ***
@@ -32,14 +40,26 @@ Full Pre-Setup
     # Get selected PTP setup
     ${setup}=    Get From Dictionary    ${ptp_setups}    ${PTP_SETUP}
 
-    # Extract POP device (example: V5000POP)
+    # --------------------------------------------------
+    # Extract POP device
+    # --------------------------------------------------
     ${pop_side}=    Get From Dictionary    ${setup}    pop_side
     ${pop_device}=    Get From Dictionary    ${pop_side}    device
-    
     Set Suite Variable    ${POP_NODE_NAME}    ${pop_device}
+    Log To Console        POP Node: ${POP_NODE_NAME}
 
+    # --------------------------------------------------
+    # Extract CN device  (FIXED: uses cn_side)
+    # --------------------------------------------------
+    ${cn_side}=     Get From Dictionary    ${setup}    cn_side
+    ${cn_device}=   Get From Dictionary    ${cn_side}    device
+    Set Suite Variable    ${DN_NODE_NAME}    ${cn_device}
+    Log To Console        DN Node: ${DN_NODE_NAME}
+
+    # --------------------------------------------------
     # Extract model from device name
     # V5000POP -> V5000
+    # --------------------------------------------------
     ${pop_model}=    Replace String    ${pop_device}    POP    ${EMPTY}
 
     # Convert to lowercase
@@ -50,7 +70,9 @@ Full Pre-Setup
 
     Log To Console    Controller Key: ${controller_key}
 
+    # --------------------------------------------------
     # Fetch controller details
+    # --------------------------------------------------
     ${controller}=    Get From Dictionary    ${public_controllers}    ${controller_key}
 
     ${HOST}=        Get From Dictionary    ${controller}    host
@@ -62,33 +84,89 @@ Full Pre-Setup
 
     Connect To Controller    ${HOST}    ${USERNAME}    ${PASSWORD}    ${PORT}
 
+    # --------------------------------------------------
+    # Fetch software versions once per suite
+    # --------------------------------------------------
+    Get POP And DN Versions
+
+    Log To Console    POP Software Version: ${POP_VERSION}    stream=stdout
+    Log To Console    POP Software Version: ${DN_VERSION}    stream=stdout
+
     Initialize Selected Models
     Initialize Run Directory
 
-Run CB2 Scenario
-    [Arguments]    ${tdd_value}    ${tdd_label}    ${mcs_value}    ${channel}
+Combined Suite Setup
+    Record Suite Start Time
+    Full Pre-Setup
+
+
+Record Suite Start Time
+    ${start}=    Get Time    epoch
+    Set Suite Variable    ${SUITE_START_TIME}    ${start}
+
+    ${human}=    Get Time
+    Log To Console    \n========== SUITE STARTED ==========
+    Log To Console    Start Time: ${human}
+    Log    Suite Start Time: ${human}    WARN
+
+
+Print Suite Execution Time
+    ${end}=    Get Time    epoch
+    ${human_end}=    Get Time
+
+    ${duration}=    Evaluate    ${end} - ${SUITE_START_TIME}
+    ${minutes}=     Evaluate    int(${duration} // 60)
+    ${seconds}=     Evaluate    int(${duration} % 60)
+
+    Log To Console    \n========== SUITE COMPLETED ==========
+    Log To Console    End Time: ${human_end}
+    Log To Console    Total Execution Time: ${minutes} min ${seconds} sec
+
+    Log    Suite End Time: ${human_end}    WARN
+    Log    Total Execution Time: ${minutes} min ${seconds} sec    WARN
+
+
+Record Test Start Time
+    ${start}=    Get Time    epoch
+    Set Test Variable    ${TEST_START_TIME}    ${start}
+
+    ${human}=    Get Time
+    Log To Console    \n----- TEST STARTED -----
+    Log To Console    ${TEST NAME} at ${human}
+    Log    Test Start Time: ${human}
+
+
+Print Test Execution Time
+    ${end}=    Get Time    epoch
+    ${human_end}=    Get Time
+
+    ${duration}=    Evaluate    ${end} - ${TEST_START_TIME}
+    ${seconds}=     Evaluate    round(${duration}, 2)
+
+    Log To Console    ${TEST NAME} completed at ${human_end}
+    Log To Console    Test Duration: ${seconds} seconds
+
+    Log    Test End Time: ${human_end}
+    Log    Test Duration: ${seconds} seconds
+
+
+Run CB1 Scenario
+    [Arguments]    ${tdd_value}    ${tdd_label}    ${mcs_value}
 
     Log To Console    ========================================================
     Log To Console    Running ${CB_NAME} | TDD ${tdd_label} | MCS ${mcs_value}
     Log To Console    ========================================================
 
     # Step 1 - Initial Link Validation
-    Log To Console    Step-1: Validate Initial Link
     Wait For Initial Link    90
 
-    # Step 2 - Ensure MCS
-    Log To Console    Step-2: Ensure MCS = ${mcs_value}
+    # Step 2 - Ensure TDD
+    Ensure TDD Config    ${tdd_value}
+
+    # Step 3 - Ensure MCS
     Ensure MCS Config    ${mcs_value}
 
-    # Step 3 - Change Channel
-    Log To Console    Step-3: Change Channel to ${channel}
-    Set Channel Config    ${channel}
-
-    # Step 4 - Validate Link After Channel Change
-    Log To Console    Step-4: Validate Link After Channel Change
-    Wait For Initial Link    120
-
-    # Step 5 - Run Traffic
+    # Step 4 - Run Traffic
     ${result}=    Run Iperf TCP    pop    dn    streams=4
     Log Raw Results    TCP-Downlink-4Stream    ${result}    ${CB_NAME}    ${tdd_label}    ${mcs_value}
 

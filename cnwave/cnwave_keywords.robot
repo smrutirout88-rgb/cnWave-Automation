@@ -156,27 +156,34 @@ Change MCS And Wait Recovery
 
 
 Get POP And DN Versions
-    [Arguments]    ${pop_name}    ${dn_name}
+    [Arguments]    ${pop_name}=None    ${dn_name}=None
 
-    ${pop_version}    ${dn_version}=    
-    ...    Call Method    
-    ...    ${CLIENT}    
-    ...    get_pop_dn_versions    
-    ...    ${pop_name}    
+    @{versions}=    Call Method
+    ...    ${CLIENT}
+    ...    get_pop_dn_versions
+    ...    ${pop_name}
     ...    ${dn_name}
 
-    Log To Console    POP Version: ${pop_version}
-    Log To Console    DN Version:  ${dn_version}
+    ${pop_ver}=    Set Variable    ${versions}[0]
+    ${dn_ver}=     Set Variable    ${versions}[1]
 
-    Set Suite Variable    ${POP_VERSION}    ${pop_version}
-    Set Suite Variable    ${DN_VERSION}     ${dn_version}
+    Log To Console    POP Version: ${pop_ver}
+    Log To Console    DN Version: ${dn_ver}
 
-    RETURN    ${pop_version}    ${dn_version}
+    Set Suite Variable    ${POP_VERSION}    ${pop_ver}
+    Set Suite Variable    ${DN_VERSION}     ${dn_ver}
 
-Get Node Info
-    ${info}=    Call Method    ${CLIENT}    get_node_info
-    Log To Console    ${info}
-    RETURN    ${info}
+    RETURN    ${pop_ver}    ${dn_ver}
 
+Execute And Log Traffic
+    [Arguments]    ${test_type}    ${src}    ${dst}    ${streams}=${None}    ${tdd_label}    ${mcs_value}
+
+    IF    '${streams}' != '${None}'
+        ${result}=    Run Iperf TCP    ${src}    ${dst}    streams=${streams}
+    ELSE
+        ${result}=    Run Iperf UDP    ${src}    ${dst}
+    END
+
+    Log Raw Results    ${test_type}    ${result}    ${CB_NAME}    ${tdd_label}    ${mcs_value}
 
 

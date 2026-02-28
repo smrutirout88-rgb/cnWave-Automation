@@ -502,3 +502,102 @@ class CnWaveClient:
             time.sleep(interval)
 
         return False
+
+
+    def get_pop_dn_versions(self, pop_name=None, dn_name=None):
+        """
+        Gets POP and DN software versions from /api/getCtrlStatusDump
+        Matches nodes by pop_node flag from topology, then looks up
+        cambiumVersion by MAC address in statusReports
+        """
+        try:
+            # Get status dump - keyed by MAC address
+            status_dump = self.request("POST", "/api/getCtrlStatusDump", payload={})
+            status_reports = status_dump.get("statusReports", {})
+
+            # Get topology to map node name → MAC → pop_node flag
+            topo = self.get_topology()
+            nodes = topo.get("nodes", [])
+
+            pop_version = "unknown"
+            dn_version  = "unknown"
+
+            for node in nodes:
+                name    = node.get("name", "")
+                mac     = node.get("mac_addr", "")
+                is_pop  = node.get("pop_node", False)
+
+                # Look up this node's status report by MAC
+                report  = status_reports.get(mac, {})
+                version = report.get("cambiumVersion", "unknown")
+
+                if is_pop:
+                    # Match by name if provided, otherwise take first POP
+                    if pop_name is None or pop_name == "None" or name == pop_name:
+                        pop_version = version
+
+                else:
+                    # Match by name if provided, otherwise take first non-POP
+                    if dn_name is None or dn_name == "None" or name == dn_name:
+                        dn_version = version
+
+            self.logger.info(f"POP version: {pop_version} | DN version: {dn_version}")
+            return pop_version, dn_version
+
+        except Exception as e:
+            self.logger.warning(f"Could not get versions: {e}")
+            return "unknown", "unknown"
+        
+    def get_software_version(self):
+        """
+        Returns software version from /local/getDeviceInfo
+        Returns: dict with swVer, fwVersion, model, type
+        """
+        try:
+            response = self.request("POST", "/local/getDeviceInfo", payload={})
+            return {
+                "swVer":      response.get("swVer", "unknown").strip(),
+                "fwVersion":  response.get("fwVersion", "unknown").strip(),
+                "model":      response.get("model", "unknown"),
+                "type":       response.get("type", "unknown"),
+            }
+        except Exception as e:
+            self.logger.warning(f"Could not get software version: {e}")
+            return {
+                "swVer": "unknown",
+                "fwVersion": "unknown",
+                "model": "unknown",
+                "type": "unknown"
+            }
+        
+    def debug_node_versions(self):
+        """
+        Debug helper - dumps topology nodes and node status
+        Used by debug_find_version.robot
+        """
+        import json
+
+        self.logger.warning("=== TOPOLOGY NODES ===")
+        try:
+            topo = self.get_topology()
+            nodes = topo.get("nodes", [])
+            if not nodes:
+                self.logger.warning("No nodes found in topology")
+            for node in nodes:
+                self.logger.warning(json.dumps(node, indent=2))
+        except Exception as e:
+            self.logger.warning(f"getTopology failed: {e}")
+
+        self.logger.warning("=== CTRL STATUS DUMP ===")
+        try:
+            status = self.request("POST", "/api/getCtrlStatusDump", payload={})
+            # Only log cambiumVersion per node to keep output clean
+            reports = status.get("statusReports", {})
+            for mac, report in reports.items():
+                self.logger.warning(
+                    f"MAC: {mac} | "
+                    f"cambiumVersion: {report.get('cambiumVersion')} | "
+                    f"hardwareBoardId: {report.get('hardwareBoardId')}"
+                )
+        except Exception as e:
+            self.logger.warning(f"getCtrlStatusDump failed: {e}")
